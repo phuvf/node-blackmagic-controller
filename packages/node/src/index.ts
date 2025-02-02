@@ -13,9 +13,11 @@ export {
 	DeviceModelId,
 	KeyId,
 	BlackmagicController,
+	BlackmagicControllerEvents,
 	BlackmagicControllerControlDefinitionBase,
 	BlackmagicControllerButtonControlDefinition,
 	BlackmagicControllerTBarControlDefinition,
+	BlackmagicControllerSetButtonColorValue,
 	BlackmagicControllerControlDefinition,
 	OpenBlackmagicControllerOptions,
 } from '@blackmagic-controller/core'
