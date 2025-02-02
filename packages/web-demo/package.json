@@ -17,7 +17,7 @@
 	},
 	"scripts": {
 		"start": "webpack serve --mode development --color",
-		"build": "run g:rimraf dist && cross-env NODE_ENV=production webpack --progress"
+		"build": "run -BT rimraf dist && cross-env NODE_ENV=production webpack --progress"
 	},
 	"dependencies": {
 		"@blackmagic-controller/web": "0.1.0",
@@ -26,8 +26,8 @@
 	"devDependencies": {
 		"copy-webpack-plugin": "^11.0.0",
 		"cross-env": "^7.0.3",
-		"ts-loader": "^9.5.1",
-		"webpack": "^5.94.0",
+		"ts-loader": "^9.5.2",
+		"webpack": "^5.97.1",
 		"webpack-cli": "^5.1.4",
 		"webpack-dev-server": "^4.15.2"
 	}
