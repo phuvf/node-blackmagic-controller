@@ -123,7 +123,7 @@ export class BlackmagicControllerBase extends EventEmitter<BlackmagicControllerE
 		)
 
 		if (!buttonControl) {
-			throw new TypeError(`Expected a valid keyIndex`)
+			throw new TypeError(`Expected a valid keyId`)
 		}
 
 		if (feedbackType && buttonControl.feedbackType !== feedbackType) {
@@ -140,7 +140,7 @@ export class BlackmagicControllerBase extends EventEmitter<BlackmagicControllerE
 		)
 
 		if (!tbarControl) {
-			throw new TypeError(`Expected a valid keyIndex`)
+			throw new TypeError(`Expected a valid tbar index`)
 		}
 
 		return tbarControl
