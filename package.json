@@ -27,26 +27,24 @@
     ]
   },
   "devDependencies": {
-    "@companion-module/tools": "^2.1.1",
+    "@companion-module/tools": "^2.2.2",
     "@tsconfig/node18": "^18.2.4",
     "@types/jest": "^29.5.14",
-    "@types/node": "^18.19.74",
-    "eslint": "^9.19.0",
-    "eslint-plugin-n": "^17.15.1",
-    "eslint-plugin-prettier": "^5.2.3",
+    "@types/node": "^18.19.86",
+    "eslint": "^9.24.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-mock": "^29.7.0",
-    "lerna": "^8.1.9",
-    "lint-staged": "^15.4.3",
-    "prettier": "^3.4.2",
-    "rimraf": "^5.0.10",
-    "snyk-nodejs-lockfile-parser": "^1.58.18",
-    "ts-jest": "^29.2.5",
+    "lerna": "^8.2.2",
+    "lint-staged": "^15.5.1",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "snyk-nodejs-lockfile-parser": "^1.60.1",
+    "ts-jest": "^29.3.1",
     "ts-node": "^10.9.2",
-    "typescript": "~5.5.4",
-    "typescript-eslint": "^8.22.0",
-    "usb": "^2.14.0"
+    "typescript": "~5.7.3",
+    "typescript-eslint": "^8.29.1",
+    "usb": "^2.15.0"
   },
   "workspaces": [
     "packages/core",
@@ -54,5 +52,5 @@
     "packages/web",
     "packages/web-demo"
   ],
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.9.1"
 }
