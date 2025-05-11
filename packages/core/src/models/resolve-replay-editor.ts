@@ -126,7 +126,7 @@ export function ResolveReplayEditorFactory(
 		events,
 		properties: new DefaultPropertiesService(device, {
 			batteryReportId: 7,
-			firmwareReportId: 1, // TODO - check the number of this
+			firmwareReportId: 1,
 			serialReportId: 8,
 		}),
 		inputService: new DefaultInputService(resolveReplayEditorProperties, events, {
