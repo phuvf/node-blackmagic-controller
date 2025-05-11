@@ -4,6 +4,7 @@ import type { HIDDeviceInfo } from './hid-device.js'
 import type {
 	BlackmagicControllerButtonControlDefinition,
 	BlackmagicControllerControlDefinition,
+	BlackmagicControllerJogControlDefinition,
 	BlackmagicControllerTBarControlDefinition,
 } from './controlDefinition.js'
 
@@ -11,6 +12,7 @@ export type BlackmagicControllerEvents = {
 	down: [control: BlackmagicControllerButtonControlDefinition]
 	up: [control: BlackmagicControllerButtonControlDefinition]
 	tbar: [control: BlackmagicControllerTBarControlDefinition, percent: number]
+	jog: [control: BlackmagicControllerJogControlDefinition, velocity: number]
 	batteryLevel: [percent: number]
 	error: [err: unknown]
 }
@@ -40,20 +42,28 @@ export interface BlackmagicController extends EventEmitter<BlackmagicControllerE
 	getBatteryLevel(): Promise<number | null>
 
 	/**
-	 * Fills the given key with a solid color.
+	 * Fills a rgb button with a solid color.
 	 *
 	 * @param {number} keyIndex The key to fill
-	 * @param {number} r The color's red value. 0 - 255
-	 * @param {number} g The color's green value. 0 - 255
-	 * @param {number} b The color's blue value. 0 -255
+	 * @param {boolean} r The color's red value. 0 - 255
+	 * @param {boolean} g The color's green value. 0 - 255
+	 * @param {boolean} b The color's blue value. 0 -255
 	 */
 	setButtonColor(keyIndex: KeyId, r: boolean, g: boolean, b: boolean): Promise<void>
+
+	/**
+	 * Sets an on-off led button with a specific state
+	 *
+	 * @param {number} keyIndex The key to fill
+	 * @param {boolean} on The led state
+	 */
+	setButtonOnOff(keyIndex: KeyId, on: boolean): Promise<void>
 
 	/**
 	 * Fill multiple keys with colors.
 	 * @param values Keys and colors to set
 	 */
-	setButtonColors(values: BlackmagicControllerSetButtonColorValue[]): Promise<void>
+	setButtonStates(values: BlackmagicControllerSetButtonSomeValue[]): Promise<void>
 
 	/**
 	 * Set the state of the T-Bar LEDs
@@ -85,8 +95,18 @@ export interface BlackmagicController extends EventEmitter<BlackmagicControllerE
 }
 
 export interface BlackmagicControllerSetButtonColorValue {
+	type: 'rgb'
 	keyId: KeyId
 	red: boolean
 	green: boolean
 	blue: boolean
 }
+export interface BlackmagicControllerSetButtonOnOffValue {
+	type: 'on-off'
+	keyId: KeyId
+	on: boolean
+}
+
+export type BlackmagicControllerSetButtonSomeValue =
+	| BlackmagicControllerSetButtonColorValue
+	| BlackmagicControllerSetButtonOnOffValue

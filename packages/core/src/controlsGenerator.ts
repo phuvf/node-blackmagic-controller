@@ -11,6 +11,7 @@ export function createRgbButtonDefinition(
 	column: number,
 	id: string,
 	encodedIndex: number,
+	ledBitIndex: number,
 ): BlackmagicControllerControlDefinition {
 	return {
 		type: 'button',
@@ -19,5 +20,24 @@ export function createRgbButtonDefinition(
 		id,
 		encodedIndex,
 		feedbackType: 'rgb',
+		ledBitIndex,
+	}
+}
+
+export function createBasicButtonDefinition(
+	row: number,
+	column: number,
+	id: string,
+	encodedIndex: number,
+	ledBitIndex: number | null,
+): BlackmagicControllerControlDefinition {
+	return {
+		type: 'button',
+		row,
+		column,
+		id,
+		encodedIndex,
+		feedbackType: ledBitIndex != null ? 'on-off' : 'none',
+		ledBitIndex: ledBitIndex ?? 0,
 	}
 }
