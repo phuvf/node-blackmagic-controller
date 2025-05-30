@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/Julusian/node-blackmagic-panel/compare/v0.2.1...v0.2.2) (2025-05-30)
+
+
+### Bug Fixes
+
+* publish auth ([dbea3d7](https://github.com/Julusian/node-blackmagic-panel/commit/dbea3d7fb6dcc40aa3a9a44975ff9516c50575eb))
+
+
+
+
+
 ## [0.2.1](https://github.com/Julusian/node-blackmagic-panel/compare/v0.2.0...v0.2.1) (2025-05-30)
 
 
