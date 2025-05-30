@@ -56,7 +56,7 @@ jobs:
       - name: Publish to NPM
         if: ${{ steps.do-publish.outputs.tag }}
         run: |
-          npm set "//registry.npmjs.org/:_authToken" "$NPM_AUTH_TOKEN"
+          yarn config set npmAuthToken $NPM_AUTH_TOKEN
 
           # --exclude @blackmagic-controller/web-demo
           yarn workspaces foreach --all -pt --exclude blackmagic-controller-packages  npm publish --access=public --tag ${{ steps.do-publish.outputs.tag }}
