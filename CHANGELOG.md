@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/Julusian/node-blackmagic-panel/compare/v0.2.0...v0.2.1) (2025-05-30)
+
+
+### Bug Fixes
+
+* tool to generate udev rules ([3972a58](https://github.com/Julusian/node-blackmagic-panel/commit/3972a588df4cc227f39ce530277e99f0f4e44200))
+
+
+
+
+
 # [0.2.0](https://github.com/Julusian/node-blackmagic-panel/compare/v0.1.1...v0.2.0) (2025-05-11)
 
 

@@ -408,7 +408,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@blackmagic-controller/web-demo@workspace:packages/web-demo"
   dependencies:
-    "@blackmagic-controller/web": "npm:0.2.0"
+    "@blackmagic-controller/web": "npm:0.2.1"
     copy-webpack-plugin: "npm:^13.0.0"
     cross-env: "npm:^7.0.3"
     html-to-image: "npm:^1.11.13"
@@ -419,7 +419,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blackmagic-controller/web@npm:0.2.0, @blackmagic-controller/web@workspace:packages/web":
+"@blackmagic-controller/web@npm:0.2.1, @blackmagic-controller/web@workspace:packages/web":
   version: 0.0.0-use.local
   resolution: "@blackmagic-controller/web@workspace:packages/web"
   dependencies:
