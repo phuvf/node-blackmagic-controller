@@ -5,14 +5,6 @@ import { FillWhenPressedDemo } from './demo/fill-when-pressed'
 import { RapidFillDemo } from './demo/rapid-fill'
 import { RainbowDemo } from './demo/rainbow'
 
-declare const LIB_VERSION: any
-if (LIB_VERSION) {
-	const elm = document.querySelector('#version_str')
-	if (elm) {
-		elm.innerHTML = `v${LIB_VERSION}`
-	}
-}
-
 function appendLog(str: string) {
 	const logElm = document.getElementById('log')
 	if (logElm) {

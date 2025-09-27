@@ -1,6 +1,6 @@
 import type { HIDDevice as CoreHIDDevice, HIDDeviceEvents, HIDDeviceInfo } from '@blackmagic-controller/core'
 import { EventEmitter } from 'eventemitter3'
-import Queue from 'p-queue'
+import PQueue from 'p-queue'
 
 /**
  * The wrapped browser HIDDevice.
@@ -9,7 +9,7 @@ import Queue from 'p-queue'
 export class WebHIDDevice extends EventEmitter<HIDDeviceEvents> implements CoreHIDDevice {
 	private readonly device: HIDDevice
 
-	private readonly reportQueue = new Queue({ concurrency: 1 })
+	private readonly reportQueue = new PQueue({ concurrency: 1 })
 
 	constructor(device: HIDDevice) {
 		super()

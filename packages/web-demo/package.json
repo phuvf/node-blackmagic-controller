@@ -17,18 +17,14 @@
 		"email": "git@julusian.co.uk"
 	},
 	"scripts": {
-		"start": "webpack serve --mode development --color",
-		"build": "run -BT rimraf dist && NODE_ENV=production webpack --progress"
+		"start": "vite",
+		"build": "run -BT rimraf dist && NODE_ENV=production vite build"
 	},
 	"dependencies": {
 		"@blackmagic-controller/web": "0.2.2",
 		"html-to-image": "^1.11.13"
 	},
 	"devDependencies": {
-		"copy-webpack-plugin": "^13.0.1",
-		"ts-loader": "^9.5.4",
-		"webpack": "^5.101.3",
-		"webpack-cli": "^6.0.1",
-		"webpack-dev-server": "^5.2.2"
+		"vite": "^7.1.7"
 	}
 }
