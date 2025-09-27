@@ -10,7 +10,7 @@
 	"homepage": "https://github.com/julusian/node-blackmagic-controller#readme",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/julusian/node-blackmagic-controller",
+		"url": "https://github.com/Julusian/node-blackmagic-controller",
 		"directory": "packages/web"
 	},
 	"bugs": {
