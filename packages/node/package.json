@@ -38,7 +38,7 @@
 	"dependencies": {
 		"@blackmagic-controller/core": "0.2.2",
 		"eventemitter3": "^5.0.1",
-		"node-hid": "^3.1.2",
+		"node-hid": "^3.2.0",
 		"tslib": "^2.8.1"
 	}
 }
