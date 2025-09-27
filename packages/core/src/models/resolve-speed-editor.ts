@@ -88,7 +88,7 @@ export function ResolveSpeedEditorFactory(
 		deviceProperties: resolveSpeedEditorProperties,
 		events,
 		properties: new DefaultPropertiesService(device, {
-			batteryReportId: 7,
+			batteryReportId: null,
 			firmwareReportId: 1,
 			serialReportId: 8,
 		}),

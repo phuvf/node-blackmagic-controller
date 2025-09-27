@@ -3,7 +3,7 @@ import type { HIDDevice } from '../../hid-device.js'
 import type { PropertiesService } from './interface.js'
 
 export interface DefaultPropertiesServiceOptions {
-	batteryReportId: number
+	batteryReportId: number | null
 	firmwareReportId: number
 	serialReportId: number
 }
@@ -18,6 +18,8 @@ export class DefaultPropertiesService implements PropertiesService {
 	}
 
 	public async getBatteryLevel(): Promise<number | null> {
+		if (this.#options.batteryReportId === null) return null
+
 		const val = await this.#device.getFeatureReport(this.#options.batteryReportId, 3)
 		return val[2] / 100
 	}

@@ -8,19 +8,8 @@ const panel = await openBlackmagicController(devices[0].path)
 await panel.clearPanel()
 
 console.log(`opened panel ${panel.MODEL}`)
-// console.log('battery level', await panel.getBatteryLevel())
-// console.log('serial', await panel.getSerialNumber())
-// console.log('firmware', await panel.getFirmwareVersion())
-
-let on = false
-
-// setInterval(() => {
-// 	on = !on
-
-// 	panel.setTbarLeds([on, on, on, on, on, on, on, on, on, on, on, on, on, on, on, on]).catch((e) => {
-// 		console.error('Error setting T-bar LEDs:', e)
-// 	})
-// }, 500)
+console.log('serial', await panel.getSerialNumber())
+console.log('firmware', await panel.getFirmwareVersion())
 
 let nextColor = 0
 
