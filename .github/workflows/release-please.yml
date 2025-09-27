@@ -52,6 +52,5 @@ jobs:
         with:
           commit_message: 'chore(release): sync versions'
           file_pattern: yarn.lock packages/*/package.json
-          branch: ${{ steps.rp.outputs.pr.headBranchName }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
