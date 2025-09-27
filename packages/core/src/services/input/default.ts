@@ -58,7 +58,6 @@ export class DefaultInputService implements BlackmagicControllerInputService {
 
 		switch (view.getUint8(0)) {
 			case this.#options.buttonReportId:
-				console.log('button presses', Buffer.from(data))
 				this.#handleButtonInput(view)
 				break
 			case this.#options.tbarReportId:

@@ -3,6 +3,15 @@ import type { BlackmagicControllerControlDefinition } from './controlDefinition.
 export function freezeDefinitions(
 	controls: BlackmagicControllerControlDefinition[],
 ): Readonly<BlackmagicControllerControlDefinition[]> {
+	const seenIds = new Set<string>()
+	for (const control of controls) {
+		const id = `${control.type}:${control.id}`
+		if (seenIds.has(id)) {
+			throw new Error(`Duplicate control id "${id}"`)
+		}
+		seenIds.add(id)
+	}
+
 	return Object.freeze(controls.map((control) => Object.freeze(control)))
 }
 

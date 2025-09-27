@@ -5,6 +5,7 @@ import type { OpenBlackmagicControllerOptionsInternal } from './models/base.js'
 import { AtemMicroPanelFactory } from './models/atem-micro-panel.js'
 import { authenticate } from './authenticate.js'
 import { ResolveReplayEditorFactory } from './models/resolve-replay-editor.js'
+import { ResolveSpeedEditorFactory } from './models/resolve-speed-editor.js'
 
 export * from './types.js'
 export * from './id.js'
@@ -39,6 +40,11 @@ export const DEVICE_MODELS2: { [key in DeviceModelId]: Omit<DeviceModelSpec, 'id
 			await authenticate(device, 6)
 			return authenticate(device, 6)
 		},
+	},
+	[DeviceModelId.DaVinciResolveSpeedEditor]: {
+		productIds: [0xda0e],
+		factory: ResolveSpeedEditorFactory,
+		authenticate: async (device) => authenticate(device, 6),
 	},
 }
 
