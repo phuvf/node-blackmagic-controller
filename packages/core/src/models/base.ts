@@ -1,6 +1,6 @@
 import { EventEmitter } from 'eventemitter3'
 import type { HIDDevice, HIDDeviceInfo } from '../hid-device.js'
-import type { DeviceModelId, KeyId } from '../id.js'
+import type { BlackmagicControllerModelId, KeyId } from '../id.js'
 import type {
 	BlackmagicController,
 	BlackmagicControllerEvents,
@@ -26,7 +26,7 @@ export interface OpenBlackmagicControllerOptionsInternal /*extends OpenBlackmagi
 }
 
 export type BlackmagicControllerProperties = Readonly<{
-	MODEL: DeviceModelId
+	MODEL: BlackmagicControllerModelId
 	PRODUCT_NAME: string
 
 	CONTROLS: Readonly<BlackmagicControllerControlDefinition[]>
@@ -45,7 +45,7 @@ export class BlackmagicControllerBase extends EventEmitter<BlackmagicControllerE
 		return this.deviceProperties.CONTROLS
 	}
 
-	get MODEL(): DeviceModelId {
+	get MODEL(): BlackmagicControllerModelId {
 		return this.deviceProperties.MODEL
 	}
 	get PRODUCT_NAME(): string {

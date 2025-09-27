@@ -1,5 +1,5 @@
 import type { HIDDevice } from './hid-device.js'
-import { DeviceModelId } from './id.js'
+import { BlackmagicControllerModelId } from './id.js'
 import type { BlackmagicController } from './types.js'
 import type { OpenBlackmagicControllerOptionsInternal } from './models/base.js'
 import { AtemMicroPanelFactory } from './models/atem-micro-panel.js'
@@ -18,7 +18,7 @@ export { BlackmagicControllerProxy } from './proxy.js'
 export const VENDOR_ID = 0x1edb
 
 export interface DeviceModelSpec {
-	id: DeviceModelId
+	id: BlackmagicControllerModelId
 	productIds: number[]
 	factory: (device: HIDDevice, options: Required<OpenBlackmagicControllerOptionsInternal>) => BlackmagicController
 
@@ -26,13 +26,13 @@ export interface DeviceModelSpec {
 }
 
 /** List of all the known models, and the classes to use them */
-export const DEVICE_MODELS2: { [key in DeviceModelId]: Omit<DeviceModelSpec, 'id'> } = {
-	[DeviceModelId.AtemMicroPanel]: {
+export const DEVICE_MODELS2: { [key in BlackmagicControllerModelId]: Omit<DeviceModelSpec, 'id'> } = {
+	[BlackmagicControllerModelId.AtemMicroPanel]: {
 		productIds: [0xbef0],
 		factory: AtemMicroPanelFactory,
 		authenticate: async (device) => authenticate(device, 5),
 	},
-	[DeviceModelId.DaVinciResolveReplayEditor]: {
+	[BlackmagicControllerModelId.DaVinciResolveReplayEditor]: {
 		productIds: [0xda11],
 		factory: ResolveReplayEditorFactory,
 		authenticate: async (device) => {
@@ -41,7 +41,7 @@ export const DEVICE_MODELS2: { [key in DeviceModelId]: Omit<DeviceModelSpec, 'id
 			return authenticate(device, 6)
 		},
 	},
-	[DeviceModelId.DaVinciResolveSpeedEditor]: {
+	[BlackmagicControllerModelId.DaVinciResolveSpeedEditor]: {
 		productIds: [0xda0e],
 		factory: ResolveSpeedEditorFactory,
 		authenticate: async (device) => authenticate(device, 6),
@@ -50,5 +50,5 @@ export const DEVICE_MODELS2: { [key in DeviceModelId]: Omit<DeviceModelSpec, 'id
 
 /** @deprecated maybe? */
 export const DEVICE_MODELS: DeviceModelSpec[] = Object.entries<Omit<DeviceModelSpec, 'id'>>(DEVICE_MODELS2).map(
-	([id, spec]) => ({ id: id as any as DeviceModelId, ...spec }),
+	([id, spec]) => ({ id: id as any as BlackmagicControllerModelId, ...spec }),
 )

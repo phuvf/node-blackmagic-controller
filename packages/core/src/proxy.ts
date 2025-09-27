@@ -1,5 +1,5 @@
 import type { EventEmitter } from 'eventemitter3'
-import type { DeviceModelId } from './id.js'
+import type { BlackmagicControllerModelId } from './id.js'
 import type { BlackmagicController, BlackmagicControllerEvents } from './types.js'
 import type { BlackmagicControllerControlDefinition } from './controlDefinition.js'
 
@@ -19,7 +19,7 @@ export class BlackmagicControllerProxy implements BlackmagicController {
 		return this.device.CONTROLS
 	}
 
-	public get MODEL(): DeviceModelId {
+	public get MODEL(): BlackmagicControllerModelId {
 		return this.device.MODEL
 	}
 	public get PRODUCT_NAME(): string {

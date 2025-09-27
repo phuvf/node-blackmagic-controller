@@ -10,7 +10,7 @@ import { BlackmagicControllerWeb } from './wrapper.js'
 
 export {
 	VENDOR_ID,
-	DeviceModelId,
+	BlackmagicControllerModelId,
 	KeyId,
 	BlackmagicController,
 	BlackmagicControllerControlDefinitionBase,

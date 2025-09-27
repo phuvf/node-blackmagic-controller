@@ -2,8 +2,7 @@
 	"extends": "@tsconfig/node20/tsconfig.json",
 	"include": ["src/**/*"],
 	"compilerOptions": {
-		"module": "commonjs",
-		"moduleResolution": "node",
+		"module": "node20",
 		"importHelpers": true,
 		"noEmitOnError": false,
 		"esModuleInterop": false,
