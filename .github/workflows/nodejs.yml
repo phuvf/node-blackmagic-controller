@@ -2,6 +2,9 @@ name: Node CI
 
 on: [push]
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: lint
@@ -23,6 +26,7 @@ jobs:
       - run: yarn lint
         env:
           CI: true
+
   audit:
     name: audit
     runs-on: ubuntu-latest
