@@ -142,7 +142,7 @@ export function ResolveReplayEditorFactory(
 class ResolveReplayLedService implements BlackmagicControllerLedService {
 	readonly #device: HIDDevice
 
-	#primaryBuffer = new LedBuffer(0x09, 33)
+	#primaryBuffer = new LedBuffer(0x09, 9)
 	#jobBuffer = new LedBuffer(0x04, 2)
 
 	constructor(device: HIDDevice) {
