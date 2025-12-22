@@ -104,8 +104,8 @@ export function ResolveSpeedEditorFactory(
 class ResolveShuttleLedService implements BlackmagicControllerLedService {
 	readonly #device: HIDDevice
 
-	#primaryBuffer = new LedBuffer(0x02, 33)
-	#jogBuffer = new LedBuffer(0x04, 3)
+	#primaryBuffer = new LedBuffer(0x02, 5)
+	#jogBuffer = new LedBuffer(0x04, 2)
 
 	constructor(device: HIDDevice) {
 		this.#device = device

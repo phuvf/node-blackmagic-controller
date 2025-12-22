@@ -1,5 +1,5 @@
 // @ts-check
-const { openBlackmagicController, listBlackmagicControllers } = require('../dist/index')
+const { openBlackmagicController, listBlackmagicControllers, BlackmagicControllerModelId } = require('../dist/index')
 
 const colors = [
 	{ red: true, green: false, blue: false },
@@ -12,9 +12,10 @@ const colors = [
 ]
 
 listBlackmagicControllers().then(async (devices) => {
-	if (!devices[0]) throw new Error('No device found')
+	const device = devices.find((d) => d.model === BlackmagicControllerModelId.AtemMicroPanel)
+	if (!device) throw new Error('No device found')
 
-	openBlackmagicController(devices[0].path).then((panel) => {
+	openBlackmagicController(device.path).then((panel) => {
 		panel.on('error', (error) => {
 			console.error(error)
 		})

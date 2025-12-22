@@ -2,9 +2,10 @@
 import { BlackmagicControllerModelId, listBlackmagicControllers, openBlackmagicController } from '../dist/index.js'
 
 const devices = await listBlackmagicControllers()
-if (!devices[0]) throw new Error('No device found')
+const selectedDev = devices.find((d) => d.model === BlackmagicControllerModelId.DaVinciResolveSpeedEditor)
+if (!selectedDev) throw new Error('No device found')
 
-const panel = await openBlackmagicController(devices[0].path)
+const panel = await openBlackmagicController(selectedDev.path)
 
 if (panel.MODEL !== BlackmagicControllerModelId.DaVinciResolveSpeedEditor)
 	throw new Error('This test is for the DaVinci Resolve Speed Editor only')
