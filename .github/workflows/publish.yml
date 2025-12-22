@@ -60,7 +60,6 @@ jobs:
       - name: Publish to NPM
         if: ${{ steps.do-publish.outputs.tag }}
         run: |
-          # --exclude @blackmagic-controller/web-demo
-          yarn workspaces foreach --all -pt --exclude blackmagic-controller-packages  npm publish --access=public --provenance --tag ${{ steps.do-publish.outputs.tag }}
+          yarn workspaces foreach --all -pt --exclude blackmagic-controller-packages --exclude @blackmagic-controller/web-demo --exclude @blackmagic-controller/web npm publish --access=public --provenance --tag ${{ steps.do-publish.outputs.tag }}
         env:
           CI: true
