@@ -1,5 +1,5 @@
 import type { EventEmitter } from 'eventemitter3'
-import type { BlackmagicControllerModelId, KeyId } from './id.js'
+import type { BlackmagicControllerModelId, KeyId } from './info.js'
 import type { HIDDeviceInfo } from './hid-device.js'
 import type {
 	BlackmagicControllerButtonControlDefinition,

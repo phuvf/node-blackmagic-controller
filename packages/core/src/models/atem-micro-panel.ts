@@ -1,7 +1,7 @@
 import type { HIDDevice } from '../hid-device.js'
 import type { BlackmagicControllerProperties, OpenBlackmagicControllerOptionsInternal } from './base.js'
 import { BlackmagicControllerBase } from './base.js'
-import { BlackmagicControllerModelId } from '../id.js'
+import { BlackmagicControllerModelId } from '../info.js'
 import { createRgbButtonDefinition, freezeDefinitions } from '../controlsGenerator.js'
 import type { BlackmagicControllerControlDefinition } from '../controlDefinition.js'
 import { CallbackHook } from '../services/callback-hook.js'
@@ -89,7 +89,6 @@ const microPanelControls: BlackmagicControllerControlDefinition[] = [
 
 const atemMicroPanelProperties: BlackmagicControllerProperties = {
 	MODEL: BlackmagicControllerModelId.AtemMicroPanel,
-	PRODUCT_NAME: 'Atem Micro Panel',
 
 	CONTROLS: freezeDefinitions(microPanelControls),
 }

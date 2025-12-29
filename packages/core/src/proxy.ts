@@ -1,5 +1,5 @@
 import type { EventEmitter } from 'eventemitter3'
-import type { BlackmagicControllerModelId } from './id.js'
+import type { BlackmagicControllerModelId } from './info.js'
 import type { BlackmagicController, BlackmagicControllerEvents } from './types.js'
 import type { BlackmagicControllerControlDefinition } from './controlDefinition.js'
 

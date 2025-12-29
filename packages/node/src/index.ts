@@ -11,6 +11,7 @@ import { BlackmagicControllerNode } from './wrapper.js'
 export {
 	VENDOR_ID,
 	BlackmagicControllerModelId,
+	getBlackmagicControllerName,
 	KeyId,
 	BlackmagicController,
 	BlackmagicControllerEvents,

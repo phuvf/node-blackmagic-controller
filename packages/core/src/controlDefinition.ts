@@ -1,4 +1,4 @@
-import type { KeyId } from './id.js'
+import type { KeyId } from './info.js'
 
 export interface BlackmagicControllerControlDefinitionBase {
 	type: 'button' | 'tbar' | 'jog'
